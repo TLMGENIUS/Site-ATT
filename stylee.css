@@ -1,0 +1,222 @@
+.card-manga {
+  width: 100rem;
+  height: 10rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: #f0f0f0;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.card-manga img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+}
+
+.controle {
+  padding-top: 40px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1{
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  color: #444;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.controle {
+  display: flex;
+  /* Para centralizar o conteúdo */
+  justify-content: center;
+  padding: 20px;
+  margin-top: -230px;
+  background-color: black !important;
+}
+
+.wrapper {
+  max-width: 700px;
+  /* Largura máxima da galeria */
+  width: 100%;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  /* Layout responsivo em grid */
+  grid-gap: 10px;
+}
+
+.col {
+  overflow: hidden;
+  /* Para evitar que a imagem vaze do container */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  /* Indica que é clicável */
+}
+
+.col:hover,
+.col.hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.containeer {
+  padding: 80px;
+  /* Mantém a proporção da imagem (ajuste conforme necessário) */
+  position: relative;
+  overflow: hidden;
+}
+
+.containeer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Preenche o container mantendo a proporção */
+  transition: transform 0.3s ease;
+}
+
+.containeer img {
+  max-width: 100px;
+  max-height: 278px;
+  width: 100%;
+  /* Para preencher o contêiner até o limite máximo */
+  height: auto;
+  /* Mantém a proporção */
+  object-fit: cover;
+}
+
+.imagem-aleatoria {
+  max-width: 100%; /* Impede que as imagens estourem o contêiner */
+  height: auto;   /* Mantém a proporção da imagem */
+  margin-bottom: 10px; /* Espaçamento entre as imagens */
+  display: block; /* Evita espaços extras abaixo das imagens */
+}
+.loadmore{
+  margin: 5px;
+}
+.hidden {
+  display: none;
+}
+#imagens-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagem-aleatoria {
+max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner pai */
+height: auto;   /* Mantém a proporção da imagem */
+display: block; /* Remove espaços extras abaixo da imagem (comportamento padrão de elementos inline) */
+margin-bottom: 10px; /* Espaçamento entre as imagens, se houver várias */
+/* Outras propriedades opcionais: */
+border-radius: 5px; /* Arredonda os cantos da imagem */
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+object-fit: cover; /* Recorta a imagem para preencher o contêiner, mantendo a proporção (pode distorcer) */
+object-position: center; /* Centraliza a imagem dentro do contêiner (usado com object-fit) */
+}
+
+#imagens-container {
+display: flex;
+flex-direction: column; /* Organiza as imagens verticalmente */
+align-items: center;    /* Centraliza as imagens horizontalmente */
+width: 100%; /*Ocupa toda a largura disponivel*/
+overflow: hidden; /*Esconde qualquer parte da imagem que ultrapasse os limites*/
+}
+
+.loadmore {
+margin: 5px;
+padding: 8px 16px; /* Aumenta o padding para melhor aparência */
+border: none;
+border-radius: 5px;
+background-color: #007bff; /* Cor de fundo azul (exemplo) */
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.loadmore:hover {
+background-color: #0056b3; /* Cor de fundo mais escura no hover */
+}
+
+.hidden {
+display: none;
+}
+
+
+.rotating-tips {
+    display: block;
+    margin: 5px 0 15px;
+    margin-top: -1px;
+    margin-bottom: 15px;
+    width: 300px; /* Largura do contêiner */
+    margin: 20px auto; /* Centraliza o contêiner */
+    overflow: hidden; /* Esconde as dicas que estão fora da área visível */
+    position: relative; /* Necessário para posicionar os botões */
+}
+
+.slide-tips {
+  list-style: none;
+  padding: 50px;
+  margin: 0;
+  transition: transform 0.5s ease-in-out; /* Transição suave para o efeito de slide */
+  display: flex; /* Para alinhar os itens horizontalmente */
+  width: 292px; /* Largura total das dicas (2 dicas * 300px) */
+}
+
+.tip {
+  width: 250px;
+  flex-shrink: 0; /* Impede que as dicas encolham */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; /* Inclui o padding na largura */
+  
+}
+
+.tip-container {
+  display: block; /* Para que o link ocupe toda a largura */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: #333; /* Cor do texto */
+}
+
+.tip-text {
+  flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+.tip-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000000; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tip-button:hover {
+  background-color: #0056b3;
+}
+
+.tip-button img {
+  margin-left: 5px;
+  max-width: 20px;
+  height: auto;
+}
+
